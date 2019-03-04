@@ -27,7 +27,7 @@ class Understanding extends Component {
         this.setState({
             understanding: '',
         })
-        this.props.history.push('/');
+        this.props.history.push('/supported');
     }
 
     render() {
@@ -45,7 +45,7 @@ class Understanding extends Component {
 
                 <br />
                 <div>
-                    {/* <Review /> */}
+                    <Review />
                 </div>
 
                 <br />

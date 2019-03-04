@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 
 
-class Feeling extends Component {
+class Feelings extends Component {
     state = {
         feelings: '',
     }
@@ -45,7 +45,7 @@ class Feeling extends Component {
 
                 <br />
                 <div>
-                    {/* <Review /> */}
+                    <Review />
                 </div>
 
                 <br />
@@ -58,4 +58,4 @@ const mapReduxStateToProps = (reduxState) => {
     return reduxState;
 }
 
-export default connect(mapReduxStateToProps)(Feeling);
+export default connect(mapReduxStateToProps)(Feelings);

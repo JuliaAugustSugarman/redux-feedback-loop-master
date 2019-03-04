@@ -45,7 +45,7 @@ class Supported extends Component {
 
                 <br />
                 <div>
-                    {/* <Review /> */}
+                    <Review />
                 </div>
 
                 <br />

@@ -6,46 +6,46 @@ import { connect } from 'react-redux';
 
 
 
-class Supported extends Component {
+class comments extends Component {
     state = {
-        supported: '',
+        comments: '',
     }
 
     handleChange = (event) => {
-        console.log('feelings handleChange', event);
+        console.log('comments handleChange', event);
 
         this.setState({
-            supported: event.target.value,
+           comments: event.target.value,
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const action = { type: 'SET_SUPPORTED', payload: this.state.supported }
+        const action = { type: 'SET_COMMENTS', payload: this.state.comments }
         this.props.dispatch(action);
         //clear 
         this.setState({
-            supported: '',
+            comments: '',
         })
-        this.props.history.push('/comments');
+        this.props.history.push('/review');
     }
 
     render() {
         return (
             <div className="App">
-                <h1>How well are you being supported?</h1>
+                <h1>Any comments you want to leave?</h1>
 
                 <form onSubmit={this.handleSubmit}>
-                    <label>Supported</label>
+                    <label>Comments</label>
                     <br />
-                    <input onChange={this.handleChange} placeholder="scale of 1-5" type='text' value={this.state.supported} />
+                    <input onChange={this.handleChange} placeholder="Comment" type='text' value={this.state.comments} />
                     <br />
                     <input type="submit" value="Next" />
                 </form>
 
                 <br />
                 <div>
-                    {/* <Review /> */}
+                    <Review />
                 </div>
 
                 <br />
@@ -58,4 +58,4 @@ const mapReduxStateToProps = (reduxState) => {
     return reduxState;
 }
 
-export default connect(mapReduxStateToProps)(Supported);
+export default connect(mapReduxStateToProps)(comments);
