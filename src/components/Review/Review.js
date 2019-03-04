@@ -14,7 +14,7 @@ class Review extends Component {
         url: '/review',
         data: this.props.feedbackReducer,
     }).then((response)=> {
-        this.props.history.push('/')
+        this.props.history.push('/thanks')
     })//end then statement
     };//end handle click
 
