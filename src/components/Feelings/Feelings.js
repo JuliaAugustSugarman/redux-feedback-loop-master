@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import Review from '../Review/Review';
+import Review from '../Review/Review';
 
 
 
@@ -36,7 +36,7 @@ class Feelings extends Component {
                 <h1>How are you feeling today?</h1>
 
                 <form onSubmit={this.handleSubmit}>
-                    <label>Feeling?</label>
+                    <label>Feelings</label>
                     <br />
                     <input onChange={this.handleChange} placeholder="scale of 1-5" type='text' value={this.state.feelings} />
                     <br />

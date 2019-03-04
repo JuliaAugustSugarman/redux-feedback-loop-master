@@ -10,7 +10,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 
-const feedbackEmptyObject = { feelings: '', undertanding: '', supports: '', comments: '', };
+const feedbackEmptyObject = { feelings: '', understanding: '', support: '', comments: '', };
 
 //Reducer
 const feedbackReducer = (state = feedbackEmptyObject, action) => {
@@ -20,7 +20,7 @@ const feedbackReducer = (state = feedbackEmptyObject, action) => {
     }
 
     else if (action.type === 'SET_UNDERSTANDING') {
-        state = { ...state, undertanding: action.payload };
+        state = { ...state, understanding: action.payload };
         return state;
     }
     else if (action.type === 'SET_SUPPORTED') {
