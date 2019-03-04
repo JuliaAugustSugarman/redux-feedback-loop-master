@@ -13,14 +13,19 @@ import { Provider } from 'react-redux';
 const feedbackEmptyObject = {feelings: '', undertanding:'', supports: '', comments:'',};
 
 //Reducer
-const feedbackReducer = (state = [], action) => {
-    if (action.type === 'SET_FEELINGS') {
-
-        state = action.payload;
+const feedbackReducer = (state = feedbackEmptyObject, action) => {
+    if (action.type === 'SET_FEELINGS') {   
+        state = {...state, feelings: action.payload};
+        return state;
     }
+   
+    else if (action.type === 'SET_UNDERSTANDING') {
+    state = { ...state, undertanding: action.payload};
+     return state;
+    };
     return state;
-}
 
+};//end Reducer
 
 
 
@@ -42,7 +47,7 @@ const feedbackReducer = (state = [], action) => {
 // The store is the big JavaScript Object that holds all of the information for our application
 const storeInstance = createStore(
     combineReducers({
-     feedbackReducer
+     feedbackReducer,
     }),
     applyMiddleware(logger), //mildle ware sits on the middle and interacts and intercepts things - or there are some that track what the redux state was before and after changes have been made.
 );
