@@ -9,13 +9,13 @@ import axios from 'axios';
 
 class Review extends Component {
     handleClick = (event) => {
-        axios({ 
-        method: 'POST',
-        url: '/review',
-        data: this.props.feedbackReducer,
-    }).then((response)=> {
-        this.props.history.push('/thanks')
-    })//end then statement
+        axios({
+            method: 'POST',
+            url: '/review',
+            data: this.props.feedbackReducer,
+        }).then((response) => {
+            this.props.history.push('/thanks')
+        })//end then statement
     };//end handle click
 
     render() {
@@ -24,17 +24,16 @@ class Review extends Component {
                 <h1>REVIEW YOUR FEEDBACK</h1>
 
 
-                <br/>
+                <br />
 
                 <div>
                     <h3> FEELINGS: {this.props.feedbackReducer.feelings}</h3>
                     <h3> UNDERSTANDING: {this.props.feedbackReducer.understanding}</h3>
                     <h3> SUPPORT: {this.props.feedbackReducer.supported}</h3>
                     <h3> COMMENTS: {this.props.feedbackReducer.comments}</h3>
-                
                 </div>
-                 <button onClick={this.handleClick}>SUBMIT</button>
-                <br/>
+                <button onClick={this.handleClick}>SUBMIT</button>
+                <br />
             </div>
         );
     }

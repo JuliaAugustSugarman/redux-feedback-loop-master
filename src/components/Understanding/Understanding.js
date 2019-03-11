@@ -21,7 +21,7 @@ class Understanding extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const action = { type: 'SET_UNDERSTANDING', payload: this.state.understanding}
+        const action = { type: 'SET_UNDERSTANDING', payload: this.state.understanding }
         this.props.dispatch(action);
         //clear 
         this.setState({
@@ -29,7 +29,7 @@ class Understanding extends Component {
         })
         this.props.history.push('/supported');
     }
-
+    å
     render() {
         return (
             <div className="App">
